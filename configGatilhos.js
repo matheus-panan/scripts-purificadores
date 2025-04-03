@@ -21,8 +21,8 @@ function criarAcionadorDiario() {
   // Criar um novo acionador diário às 8:00
   ScriptApp.newTrigger('rotinaDiasUteis')
     .timeBased()
-    .atHour(08)
-    .nearMinute(00)
+    .atHour(07)
+    .nearMinute(50)
     .everyDays(1)
     .create();
     
