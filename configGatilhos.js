@@ -1,7 +1,10 @@
+/*  Configura gatilhos baseados em tempo para rodar as funções automaticamente sem necessidade de ter 
+    que realizar estes procedimentos manualmente
+*/ 
+
 function rotinaDiasUteis() {
   var hoje = new Date();
   var diaDaSemana = hoje.getDay();
-  //Logger.log(diaDaSemana) 
   
   // Se não for domingo (0), execute a função
   if (diaDaSemana !== 0) {
@@ -39,7 +42,7 @@ function criarAcionadorParaCopia(){
       ScriptApp.deleteTrigger(acionadores[i]);
   }
 
-  // Criar um novo acionador diário às 8:30
+  // Criar um novo acionador diário às 8:10
   ScriptApp.newTrigger('copiarParaListaMaria')
     .timeBased()
     .atHour(08)
