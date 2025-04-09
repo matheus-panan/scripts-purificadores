@@ -25,7 +25,7 @@ function criarAcionadorDiario() {
   ScriptApp.newTrigger('rotinaDiasUteis')
     .timeBased()
     .atHour(07)
-    .nearMinute(50)
+    .nearMinute(59)
     .everyDays(1)
     .create();
     
@@ -42,18 +42,46 @@ function criarAcionadorParaCopia(){
       ScriptApp.deleteTrigger(acionadores[i]);
   }
 
-  // Criar um novo acionador diário às 8:10
+  // Criar um novo acionador diário às 8:05
   ScriptApp.newTrigger('copiarParaListaMaria')
     .timeBased()
     .atHour(08)
-    .nearMinute(10)
+    .nearMinute(05)
     .everyDays(1)
     .create();
 
   ScriptApp.newTrigger('copiarParaListaGabrielly')
     .timeBased()
     .atHour(08)
-    .nearMinute(10)
+    .nearMinute(05)
+    .everyDays(1)
+    .create();  
+    
+  Logger.log('Acionadores criados com sucesso!');
+}
+
+function criarAcionadorHistorico(){
+  // Remover quaisquer acionadores existentes para evitar duplicação
+  var acionadores = ScriptApp.getProjectTriggers();
+  for (var i = 0; i < acionadores.length; i++) {
+    if (acionadores[i].getHandlerFunction() === 'copiarParaListaMaria')
+      ScriptApp.deleteTrigger(acionadores[i]);
+    else if(acionadores[i].getHandlerFunction()=== 'copiarParaListaGabrielly')
+      ScriptApp.deleteTrigger(acionadores[i]);
+  }
+
+  // Cria novos acionadores diários às 20:00
+  ScriptApp.newTrigger('historicoGabrielly')
+    .timeBased()
+    .atHour(20)
+    .nearMinute(00)
+    .everyDays(1)
+    .create();
+
+  ScriptApp.newTrigger('historicoMaria')
+    .timeBased()
+    .atHour(20)
+    .nearMinute(00)
     .everyDays(1)
     .create();  
     

@@ -15,7 +15,7 @@ function copiarParaLista(nomeLista, urlDestino) {
     var sheetDestino = destino.getSheetByName(nomeLista) || destino.insertSheet(nomeLista);
 
     // 4. Obter dados da origem
-    sheetDestino.getRange("A2:C41").clearContent();
+    sheetDestino.getRange("A2:D41").clearContent();
     
     // 5. Obter dados da origem
     var dados = sheetOrigem.getDataRange().getValues();

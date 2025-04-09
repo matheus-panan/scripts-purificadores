@@ -21,10 +21,9 @@ function gerarListasClientes() {
   var listaMaria = clientesValidos.slice(0, 40); // Pega os primeiros 40
   var listaGabrielly = clientesValidos.slice(40, 80); // Pega os próximos 40
   processarListas(listaGabrielly, listaMaria, data, dadosSheet, listaGabriellySheet, listaMariaSheet)
-  mensagemUsuario()
 }
 
-function mensagemUsuario() {
+/*function mensagemUsuario() {
   // Obter a data atual formatada
   var dataAtual = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "dd/MM/yyyy");
   
@@ -32,5 +31,5 @@ function mensagemUsuario() {
   var mensagem = "Lista do dia: " + dataAtual + " foi gerada!";
   
   // Exibir o popup
-  SpreadsheetApp.getUi().alert(mensagem);
-}
+  //SpreadsheetApp.getUi().alert(mensagem);
+}*/

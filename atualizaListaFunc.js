@@ -17,13 +17,13 @@
 function copiarParaListaMaria() {
   copiarParaLista(
     "Lista Maria", 
-    "https://docs.google.com/spreadsheets/d/1LUfxhG6SCKgP4G-LGj5QdypQQ0IgFqQLUpAVVzTSgcY/edit"
-  );
+    "https://docs.google.com/spreadsheets/d/1SGzQA62IQVkjwD0fmejLsLMHoKz53B77J-8xCu7jIgw/edit"
+  ); 
 }
 
 function copiarParaListaGabrielly() {
   copiarParaLista(
     "Lista Gabrielly", 
-    "https://docs.google.com/spreadsheets/d/1FPsHSvoWskEJXNwWk4IY3Z5XD3RiZM38wXzQQQaYl8c/edit"
+    "https://docs.google.com/spreadsheets/d/153BTT_4N4A9XEIml2NLNN6jb0QqI4KgW_hGTyzqLWZ0/edit"
   );
 }
