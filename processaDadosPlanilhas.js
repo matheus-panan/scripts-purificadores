@@ -31,14 +31,15 @@ function criarListaClientesValidos(data, dataUltimaCompra){
   var clientesValidos = []
   for (let i = 1; i < data.length; i++) {
     var cliente = data[i][0]; // Coluna A (Cliente)
-    var status = data[i][8]; // Coluna I (Status)
+    var status = data[i][7]; // Coluna H (Status)
     var dataCompra = new Date(data[i][2]); // Coluna C (Data da Última Compra)
-    // Verifica se a compra é anterior a 9 meses e se o status não é 'V'
-    if (dataCompra < dataUltimaCompra && status !== "V") {
+    
+    /* Verifica se a compra é anterior a 9 meses e se o status não é 'V' (Isso existe para casos em que o cliente nao comprou
+     mas já foi verificado que não é possível realizar a troca do refil por qualquer motivo que seja)*/
+    if (dataCompra < dataUltimaCompra && status !== "V")
       clientesValidos.push(cliente); // Adiciona cliente à lista de válidos
-    }
-    if(clientesValidos.length == 80)
-      break
+    /*if(clientesValidos.length == 80)
+      break*/
   }
   return clientesValidos
 }
@@ -55,7 +56,7 @@ function processarListas(listaGabrielly, listaMaria, data, dadosSheet, listaGabr
     for (let j = 0; j < lista.length; j++) {
       const index = data.findIndex(row => row[0] === lista[j]);
       if (index !== -1) {
-        dadosSheet.getRange(index + 1, 9).setValue("V"); // Coluna I
+        dadosSheet.getRange(index + 1, 8).setValue("V"); // Coluna H
       }
       sheet.getRange(j + 2, 1).setValue(lista[j]);
     }
